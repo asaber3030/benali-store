@@ -24,8 +24,6 @@ import { Product } from "@prisma/client"
 type Props = { product: Product }
 
 export const UpdateProductModal = ({ product }: Props) => {
-  const [src, setSrc] = useState(product.image)
-
   const updateMutation = useMutation({
     mutationFn: (values: UpdateProductFormValues) => updateProductAction(product.id, values),
     onSuccess: (data) => {
@@ -51,7 +49,6 @@ export const UpdateProductModal = ({ product }: Props) => {
         <DialogHeader>
           <DialogTitle>تعديل المنتج</DialogTitle>
         </DialogHeader>
-        <Image src={src} alt="Product image" width={1000} height={1000} className="w-full max-w-full rounded-md" />
         <section>
           <Formik
             initialValues={{
@@ -67,7 +64,6 @@ export const UpdateProductModal = ({ product }: Props) => {
             }}
           >
             {({ errors, values }) => {
-              setSrc(values.image)
               return (
                 <Form className="space-y-4">
                   <InputField name="name" label="اسم المنتج" error={errors.name} />

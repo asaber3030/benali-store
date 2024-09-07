@@ -24,7 +24,6 @@ import { Category } from "@prisma/client"
 type Props = { categories: Category[] }
 
 export const CreateProductModal = ({ categories }: Props) => {
-  const [src, setSrc] = useState("")
   const [open, setOpen] = useState(false)
 
   const createMutation = useMutation({
@@ -54,8 +53,6 @@ export const CreateProductModal = ({ categories }: Props) => {
           <DialogTitle>اضافة المنتج</DialogTitle>
         </DialogHeader>
 
-        {src && <Image src={src} alt="Product image" width={1000} height={1000} className="w-full max-w-full rounded-md" />}
-
         <section>
           <Formik
             initialValues={{
@@ -71,7 +68,6 @@ export const CreateProductModal = ({ categories }: Props) => {
             }}
           >
             {({ errors, values }) => {
-              setSrc(values.image)
               return (
                 <Form className="space-y-4">
                   <InputField name="name" label="اسم المنتج" error={errors.name} />
