@@ -60,7 +60,7 @@ export const CreateProductModal = ({ categories }: Props) => {
               description: "",
               image: "",
               price: 0,
-              categoryId: 0,
+              categoryId: categories[0].id,
             }}
             validationSchema={ProductSchema.create}
             onSubmit={(values: CreateProductFormValues) => {
