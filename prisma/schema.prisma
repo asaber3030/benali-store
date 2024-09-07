@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_LOCAL")
+}
+
+model Admin {
+  id       Int @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String 
+}
+
+model Category {
+  id       Int @id @default(autoincrement())
+  name     String
+  products Product[]
+}
+
+model Product {
+  id          Int @id @default(autoincrement())
+  name        String
+  description String
+  price       Int
+  image       String @default("/defaults/pubg.jpg")
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
