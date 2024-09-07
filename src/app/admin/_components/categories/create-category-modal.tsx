@@ -15,7 +15,6 @@ import { Plus } from "lucide-react"
 
 import { CreateCategoryFormValues } from "@/types"
 import { CategorySchema } from "@/schema"
-import { Category } from "@prisma/client"
 
 export const CreateCategoryModal = () => {
   const [open, setOpen] = useState(false)

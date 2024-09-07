@@ -9,15 +9,19 @@ import { toast } from "sonner"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/app/components/common/button"
 import { Trash } from "lucide-react"
+import { useState } from "react"
 
 type Props = { categoryId: number }
 
 export const DeleteCategoryModal = ({ categoryId }: Props) => {
+  const [open, setOpen] = useState(false)
+
   const deleteMutation = useMutation({
     mutationFn: () => deleteCategoryAction(categoryId),
     onSuccess: (data) => {
       if (data.status === responseCodes.ok) {
         toast.success(data.message)
+        setOpen(false)
       } else {
         toast.error(data.message)
       }
@@ -28,7 +32,7 @@ export const DeleteCategoryModal = ({ categoryId }: Props) => {
   })
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="border border-red-500 text-red-500 hover:bg-red-100 bg-transparent px-4 text-sm h-8" icon={Trash}>
           حذف
