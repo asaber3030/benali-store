@@ -6,7 +6,6 @@ import { useMutation } from "@tanstack/react-query"
 import { useState } from "react"
 
 import { createProductAction } from "@/actions/products"
-import { productImages } from "@/lib/constants"
 import { responseCodes } from "@/lib/response"
 import { toast } from "sonner"
 
@@ -67,7 +66,7 @@ export const CreateProductModal = ({ categories }: Props) => {
               createMutation.mutate(values)
             }}
           >
-            {({ errors, values }) => {
+            {({ errors }) => {
               return (
                 <Form className="space-y-4">
                   <InputField name="name" label="اسم المنتج" error={errors.name} />

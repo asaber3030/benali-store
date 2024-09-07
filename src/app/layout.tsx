@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ReactQueryClientProvider>
-      <html lang="ar" dir="rtl">
+      <html lang="ar" dir="rtl" className="scroll-smooth">
         <body className={cn(cairo.className)}>
           <Toaster position="top-center" />
           {children}

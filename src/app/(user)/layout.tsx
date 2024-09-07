@@ -10,8 +10,7 @@ export default function UserLayout({ children }: { children: React.ReactNode }) 
   return (
     <div>
       <Navbar />
-
-      <div className="py-8">{children}</div>
+      <div>{children}</div>
       <Footer />
     </div>
   )

@@ -1,7 +1,7 @@
-import { Category, Product } from "@prisma/client"
-import { SingleProduct } from "./products/product"
-
 import Image from "next/image"
+
+import { Category, Product } from "@prisma/client"
+import { SingleProduct } from "./product"
 import { Hash } from "lucide-react"
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 
 export const SingleCategory = ({ category }: Props) => {
   return (
-    <div className="p-3 rounded-md">
+    <div className="p-3 rounded-md" id={`single-category-${category.id}`}>
       <h2 className="text-2xl font-bold mb-2 flex gap-2 items-center animate-pulse">
         <Hash className="size-5" /> {category.name}
       </h2>

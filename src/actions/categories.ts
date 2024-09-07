@@ -14,6 +14,7 @@ export async function createCategoryAction(data: CreateCategoryFormValues) {
       data,
     })
     revalidatePath(routes.adminDashboard())
+    revalidatePath("/")
     return actionResponse(responseCodes.ok, "تم اضافة القسم")
   } catch (error) {
     return actionResponse(responseCodes.serverError, "هناك خطأ في اضافة القسم.")
@@ -27,6 +28,7 @@ export async function updateCategoryAction(id: number, data: UpdateCategoryFormV
       data,
     })
     revalidatePath(routes.adminDashboard())
+    revalidatePath("/")
     return actionResponse(responseCodes.ok, "تم تعديل القسم")
   } catch (error) {
     return actionResponse(responseCodes.serverError, "هناك خطأ في تعديل القسم.")
@@ -39,6 +41,7 @@ export async function deleteCategoryAction(id: number) {
       where: { id },
     })
     revalidatePath(routes.adminDashboard())
+    revalidatePath("/")
     return actionResponse(responseCodes.ok, "تم حذف القسم")
   } catch (error) {
     return actionResponse(responseCodes.serverError, "هناك خطأ في حذف القسم.")
