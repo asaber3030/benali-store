@@ -1,4 +1,4 @@
-export const apiURL = "http://localhost:3000/api"
+export const apiURL = "https://benali-store.vercel.app/api"
 export const cookieAdminName = "admin-store-services"
 
 export const productImages = [

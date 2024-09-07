@@ -12,14 +12,14 @@ export const ProductSchema = {
     name: Yup.string().required("اجباري!").optional(),
     description: Yup.string().required("اجباري").optional(),
     price: Yup.number().min(0, "لا يمكن للسعر ان يكون 0").required("اجباري").optional(),
-    image: Yup.string().required("اجباري").optional(),
+    image: Yup.string().url("برجاء وضع لينك").required("اجباري").optional(),
   }),
   create: Yup.object().shape({
     name: Yup.string().required("اجباري!"),
     description: Yup.string().required("اجباري"),
     price: Yup.number().min(0, "لا يمكن للسعر ان يكون 0").required("اجباري"),
     categoryId: Yup.number().min(0, "لا يمكن لرقم للقسم ان يكون 0").required("اجباري"),
-    image: Yup.string().required("اجباري"),
+    image: Yup.string().url("برجاء وضع لينك").required("اجباري"),
   }),
 }
 

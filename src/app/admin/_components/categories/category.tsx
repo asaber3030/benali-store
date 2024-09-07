@@ -1,6 +1,7 @@
+import Image from "next/image"
+
 import { Category, Product } from "@prisma/client"
 import { SingleProduct } from "./products/product"
-import Image from "next/image"
 import { UpdateCategoryModal } from "./update-category-modal"
 import { DeleteCategoryModal } from "./delete-category-model"
 

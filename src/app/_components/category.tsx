@@ -23,7 +23,7 @@ export const SingleCategory = ({ category }: Props) => {
             ))}
           </div>
         ) : (
-          <div className="text-center flex flex-col justify-center mx-auto bg-gray-100 shadow-sm border p-8 rounded-md">
+          <div className="text-center flex flex-col justify-center mx-auto bg-[#222] shadow-sm border border-[#333] p-8 rounded-md">
             <Image src="/defaults/empty.svg" alt="Empty Data" width={1000} height={1000} className="mx-auto size-36 max-w-full" />
             <p className="font-semibold text-2xl">لا يوجد منتجات!</p>
           </div>

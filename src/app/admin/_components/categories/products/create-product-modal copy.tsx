@@ -77,13 +77,7 @@ export const CreateProductModal = ({ categories }: Props) => {
                   <InputField name="name" label="اسم المنتج" error={errors.name} />
                   <InputField name="description" label="وصف المنتج" error={errors.description} />
                   <InputField type="number" name="price" label="سعر المنتج" error={errors.price} />
-                  <SelectField name="image" label="صورة المنتج" error={errors.image}>
-                    {productImages.map((product) => (
-                      <option value={product.image} key={product.label}>
-                        {product.label}
-                      </option>
-                    ))}
-                  </SelectField>
+                  <InputField name="image" label="صورة المنتج" error={errors.image} />
                   <SelectField name="categoryId" label="القسم" error={errors.categoryId}>
                     {categories.map((category) => (
                       <option value={category.id} key={category.id}>

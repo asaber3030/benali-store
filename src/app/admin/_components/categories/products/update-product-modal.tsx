@@ -73,13 +73,7 @@ export const UpdateProductModal = ({ product }: Props) => {
                   <InputField name="name" label="اسم المنتج" error={errors.name} />
                   <InputField name="description" label="وصف المنتج" error={errors.description} />
                   <InputField type="number" name="price" label="سعر المنتج" error={errors.price} />
-                  <SelectField name="image" label="صورة المنتج" error={errors.image}>
-                    {productImages.map((product) => (
-                      <option value={product.image} key={product.label}>
-                        {product.label}
-                      </option>
-                    ))}
-                  </SelectField>
+                  <InputField name="image" label="صورة المنتج" error={errors.image} />
                   <Button loading={updateMutation.isPending} className="w-full justify-center" icon={Edit}>
                     تعديل
                   </Button>
