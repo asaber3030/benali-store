@@ -5,7 +5,7 @@ import Image from "next/image"
 import { UpdateProductModal } from "./update-product-modal"
 import { DeleteProductModal } from "./delete-product-model"
 import { FullProduct } from "@/types"
-import { CreatePriceForm } from "./create-price-form"
+import { CreatePriceModal } from "./create-price-modal"
 import { ViewPricesModal } from "./view-prices-modal"
 
 type Props = {
@@ -21,11 +21,11 @@ export const SingleProduct = ({ product }: Props) => {
         <p className="text-gray-500">{product.description}</p>
         {product.prices?.length === 0 && <p className="text-green-600 font-bold">{product.price} جنية مصري</p>}
       </div>
-      <div className="grid xl:grid-cols-2 grid-cols-1 gap-1 p-4 py-2 pb-4">
+      <div className="grid grid-cols-1 gap-1 p-4 py-2 pb-4">
         <UpdateProductModal product={product} />
         <DeleteProductModal productId={product.id} />
         <ViewPricesModal prices={product.prices} />
-        <CreatePriceForm productId={product.id} />
+        <CreatePriceModal productId={product.id} />
       </div>
     </div>
   )

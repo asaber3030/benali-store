@@ -18,7 +18,7 @@ import { PriceSchema } from "@/schema"
 
 type Props = { productId: number }
 
-export const CreatePriceForm = ({ productId }: Props) => {
+export const CreatePriceModal = ({ productId }: Props) => {
   const [open, setOpen] = useState(false)
 
   const createMutation = useMutation({
@@ -39,12 +39,12 @@ export const CreatePriceForm = ({ productId }: Props) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="border border-green-700 text-green-700 hover:bg-green-100 bg-transparent px-4 text-sm h-8" icon={DollarSign}>
-          اضافة سعر
+          خدمة فرعية جديده
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader className="text-right">
-          <DialogTitle>اضافة سعر</DialogTitle>
+          <DialogTitle>اضافة خدمه فرعية</DialogTitle>
         </DialogHeader>
         <section>
           <Formik
