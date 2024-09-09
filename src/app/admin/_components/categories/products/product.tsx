@@ -19,7 +19,7 @@ export const SingleProduct = ({ product }: Props) => {
       <div className="px-4 py-2 flex flex-col gap-1">
         <p className="text-lg font-semibold">{product.name}</p>
         <p className="text-gray-500">{product.description}</p>
-        <p className="text-green-600 font-bold">{product.price} جنية مصري</p>
+        {product.prices?.length === 0 && <p className="text-green-600 font-bold">{product.price} جنية مصري</p>}
       </div>
       <div className="grid xl:grid-cols-2 grid-cols-1 gap-1 p-4 py-2 pb-4">
         <UpdateProductModal product={product} />
