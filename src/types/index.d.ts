@@ -1,3 +1,5 @@
+import { Product, ProductPrice } from "@prisma/client"
+
 export type APIResponse<T> = {
   message: string
   status: number
@@ -28,4 +30,16 @@ export type UpdateCategoryFormValues = {
 }
 export type CreateCategoryFormValues = {
   name: string
+}
+export type CreatePriceFormValues = {
+  title: string
+  price: number
+}
+export type UpdatePriceFormValues = {
+  title: string
+  price: number
+}
+
+export type FullProduct = Product & {
+  prices: ProductPrice[]
 }

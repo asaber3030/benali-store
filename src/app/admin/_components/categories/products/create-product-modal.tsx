@@ -1,7 +1,5 @@
 "use client"
 
-import Image from "next/image"
-
 import { useMutation } from "@tanstack/react-query"
 import { useState } from "react"
 

@@ -34,8 +34,8 @@ export const LoginAdminForm = () => {
   return (
     <Formik
       initialValues={{
-        email: "a@a.com",
-        password: "123456789",
+        email: "",
+        password: "",
       }}
       validationSchema={AdminSchema.login}
       onSubmit={(values: AdminLoginFormValues) => {
@@ -44,10 +44,10 @@ export const LoginAdminForm = () => {
     >
       {({ errors }) => (
         <Form className="space-y-4">
-          <InputField name="email" label="Email" error={errors.email} />
-          <InputField type="password" name="password" label="Password" error={errors.password} />
+          <InputField name="email" label="البريدد الالكتروني" error={errors.email} />
+          <InputField type="password" name="password" label="الرقم السري" error={errors.password} />
           <Button loading={loginMutation.isPending} className="w-full justify-center" icon={LogIn}>
-            Login
+            تسجيل الدخول
           </Button>
         </Form>
       )}

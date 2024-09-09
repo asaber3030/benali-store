@@ -31,3 +31,14 @@ export const CategorySchema = {
     name: Yup.string().required("اجباري!"),
   }),
 }
+
+export const PriceSchema = {
+  update: Yup.object().shape({
+    title: Yup.string().required("اجباري!").optional(),
+    price: Yup.number().min(0, "لا يمكن للسعر ان يكون 0").required("اجباري").optional(),
+  }),
+  create: Yup.object().shape({
+    title: Yup.string().required("اجباري!"),
+    price: Yup.number().min(0, "لا يمكن للسعر ان يكون 0").required("اجباري"),
+  }),
+}
