@@ -44,7 +44,7 @@ export const LoginAdminForm = () => {
     >
       {({ errors }) => (
         <Form className="space-y-4">
-          <InputField name="email" label="البريدد الالكتروني" error={errors.email} />
+          <InputField name="email" label="البريد الالكتروني" error={errors.email} />
           <InputField type="password" name="password" label="الرقم السري" error={errors.password} />
           <Button loading={loginMutation.isPending} className="w-full justify-center" icon={LogIn}>
             تسجيل الدخول
