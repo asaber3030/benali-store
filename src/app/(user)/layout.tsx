@@ -1,17 +1,31 @@
-import React from "react"
+import type { Metadata } from "next";
+import { Cairo } from "next/font/google";
 
-import "./user.css"
+import { Providers } from "./providers";
 
-import { Navbar } from "../_components/navbar"
-import { Footer } from "../_components/footer"
-import { CategoriesList } from "../_components/categories-list"
+import "./globals.css";
 
-export default function UserLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "Benali Store",
+  description: "Displays all available products and services provided by me",
+};
+
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  display: "swap",
+  variable: "--font-cairo",
+});
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
-  )
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
+      <body className={`${cairo.variable} font-sans`}>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
 }

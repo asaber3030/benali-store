@@ -1,24 +1,28 @@
-export const dynamic = "force-dynamic"
-
-import db from "@/services/prisma"
-
-import { SingleCategory } from "../_components/category"
-import { CategoriesList } from "../_components/categories-list"
+import db from "@/services/prisma";
+import Header from "@/components/Header";
+import Nav from "@/components/Nav";
+import Category from "@/components/Category";
+import Footer from "@/components/Footer";
 
 export default async function Home() {
   const categories = await db.category.findMany({
-    include: { products: true },
-  })
+    include: {
+      products: {
+        include: { prices: true },
+      },
+    },
+  });
 
   return (
     <>
-      <h2 className="text-3xl font-bold mb-2 xl:px-16 md:px-16 px-4 mt-4">الاقسام</h2>
-      <CategoriesList categories={categories} />
-      <div className="space-y-4 xl:px-16 md:px-16 px-2 mt-4">
-        {categories.map((category) => (
-          <SingleCategory key={`category-${category.id}`} category={category} />
+      <Header />
+      <Nav categories={categories} />
+      <main>
+        {categories.map((category, index) => (
+          <Category key={index} {...category} />
         ))}
-      </div>
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
