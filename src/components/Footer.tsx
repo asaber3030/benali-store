@@ -23,17 +23,17 @@ export default function Footer() {
           >
             عبد الرحمن صابر
           </a>{" "}
-          والتصميم بواسطة{" "}
+          و{" "}
           <a
             href="https://yosefbeder.vercel.app/"
             className="normal"
             target="_blank"
           >
             يوسف بدير
-          </a>
+          </a>{" "}
           ·{" "}
           <a
-            href="https://www.facebook.com/people/DocReader-Guide/61564416632497/?mibextid=ZbWKwL"
+            href="https://www.facebook.com/people/تيم-المأكولات-البرمجية/61563911087397/?mibextid=kFxxJD"
             className="normal"
             target="_blank"
           >
