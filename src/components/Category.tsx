@@ -26,9 +26,13 @@ export default function Category({
                 <div className="flex flex-col p-2 gap-2 bg-slate-100 dark:bg-slate-800">
                   <h3>{name}</h3>
                   <p className="whitespace-pre-line">{description}</p>
-                  <p className="text-2xl">
-                    <b>{price} ج.م.</b>
-                  </p>
+                  {price ? (
+                    <p className="text-2xl">
+                      <b>{price} ج.م.</b>
+                    </p>
+                  ) : (
+                    <></>
+                  )}
                   <ul className="list-inside list-disc">
                     {prices.map(({ title, price }, index) => (
                       <li key={index}>
