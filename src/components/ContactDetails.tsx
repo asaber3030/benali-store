@@ -18,7 +18,7 @@ const links = [
   {
     Icon: Telegram,
     color: "hover:text-[#26A5E4]",
-    href: "https://www.instagram.com/benali.2a4?igsh=MXV5aTV4czV5N2dscg==",
+    href: "https://t.me/Benali24144",
   },
   {
     Icon: Facebook,
@@ -28,7 +28,7 @@ const links = [
   {
     Icon: Instagram,
     color: "hover:text-[#E4405F]",
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/benali.2a4?igsh=MXV5aTV4czV5N2dscg==",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function ContactDetails() {
     <ul className="flex gap-4">
       {links.map(({ Icon, color, href }, index) => (
         <li key={index}>
-          <a href={href} className={color}>
+          <a href={href} target="_blank" className={color}>
             <Icon />
           </a>
         </li>
